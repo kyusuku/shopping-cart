@@ -1,16 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useItemCount } from "../context/ItemCountContext";
 
-interface propTypes {
-  itemCount: number;
-}
-
-const Nav = ({ itemCount }: propTypes) => {
+const Nav = () => {
+  const { itemCount } = useItemCount();
   const location = useLocation();
 
   return (
-    <div className="absolute top-0 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
+    <div className="fixed top-0 z-2 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
       <Link to="/" className="text-3xl font-bold text-[#004687]">
         Threadware
       </Link>
@@ -33,10 +31,16 @@ const Nav = ({ itemCount }: propTypes) => {
         </Link>
       </div>
       <Link to="/checkout">
-        <div className="flex items-center gap-4 rounded-md px-4 py-2 transition hover:scale-105 hover:bg-[#bdddfa]">
+        <div
+          className={`flex items-center gap-4 rounded-md px-4 py-2 transition hover:scale-105 hover:bg-[#bdddfa] ${
+            location.pathname === "/checkout" ? "bg-[#bdddfa]" : ""
+          }`}
+        >
           <FontAwesomeIcon icon={faCartShopping} />
           <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#004687]">
-            <p className="font-bold text-white">{itemCount}</p>
+            <p className="font-bold text-white">
+              {itemCount > 99 ? "99" : itemCount}
+            </p>
           </div>
         </div>
       </Link>
