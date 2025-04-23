@@ -10,14 +10,14 @@ const Nav = ({ itemCount }: propTypes) => {
   const location = useLocation();
 
   return (
-    <div className="sticky mb-8 flex items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
+    <div className="absolute top-0 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
       <Link to="/" className="text-3xl font-bold text-[#004687]">
         Threadware
       </Link>
       <div className="text-md flex gap-8 font-semibold">
         <Link
           to="/"
-          className={`rounded-md px-4 py-2 transition hover:translate-y-1 hover:bg-[#bdddfa] ${
+          className={`rounded-md px-4 py-2 transition hover:-translate-y-1 hover:bg-[#bdddfa] ${
             location.pathname === "/" ? "bg-[#bdddfa] text-[#004687]" : ""
           }`}
         >
@@ -25,7 +25,7 @@ const Nav = ({ itemCount }: propTypes) => {
         </Link>
         <Link
           to="/shop"
-          className={`rounded-md px-4 py-2 transition hover:translate-y-1 hover:bg-[#bdddfa] ${
+          className={`rounded-md px-4 py-2 transition hover:-translate-y-1 hover:bg-[#bdddfa] ${
             location.pathname === "/shop" ? "bg-[#bdddfa] text-[#004687]" : ""
           }`}
         >
