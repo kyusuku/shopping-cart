@@ -33,7 +33,7 @@ const Shop = () => {
           <div className="h-16 w-16 animate-spin rounded-full border-4 border-gray-300 border-t-[#004687]"></div>
         </div>
       ) : (
-        <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8">
+        <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-16">
           <div className="animate-float mt-32 flex max-w-[80ch] flex-col items-center gap-6">
             <h1 className="text-center text-5xl font-bold text-[#1E293E]">
               Shop the <span className="text-[#004687]">Future</span>
