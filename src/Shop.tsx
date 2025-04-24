@@ -52,7 +52,7 @@ const Shop = () => {
             <div className="relative text-gray-600">
               <input
                 onChange={(e) => handleSearchChange(e)}
-                className="h-10 rounded-lg border border-gray-300 bg-white px-5 pr-10 text-sm focus:outline-none"
+                className="h-10 rounded-lg border border-gray-300 bg-white px-5 pr-10 text-sm transition hover:border-[#004687] focus:border-[#004687] focus:outline-none"
                 type="search"
                 name="search"
                 placeholder="Search products ..."
