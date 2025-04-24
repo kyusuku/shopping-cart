@@ -36,15 +36,15 @@ const Shop = () => {
         <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-16">
           <div className="animate-float mt-32 flex max-w-[80ch] flex-col items-center gap-6">
             <h1 className="text-center text-5xl font-bold text-[#1E293E]">
-              Shop the <span className="text-[#004687]">Future</span>
+              Shop the <span className="text-[#004687] italic">Future</span>
             </h1>
-            <p className="text-center text-gray-600">
+            <p className="text-center text-gray-600 italic">
               Discover fashion engineered for the modern world. In our curated
               shop, every piece blends form and function &mdash; from adaptable
               streetwear to precision-cut essentials. Built with purpose, worn
               with style
             </p>
-            <p className="text-center text-gray-600">
+            <p className="text-center text-gray-600 italic">
               Smart. Seamless. Ready when you are
             </p>
           </div>
@@ -52,7 +52,7 @@ const Shop = () => {
             <div className="relative text-gray-600">
               <input
                 onChange={(e) => handleSearchChange(e)}
-                className="h-10 rounded-lg border border-gray-300 bg-white px-5 pr-10 text-sm transition hover:border-[#004687] focus:border-[#004687] focus:outline-none"
+                className="h-10 rounded-lg border border-gray-300 bg-white px-5 pr-10 text-sm placeholder-gray-600 transition hover:border-[#004687] focus:border-[#004687] focus:outline-none max-md:w-50 max-sm:h-9 max-sm:w-30"
                 type="search"
                 name="search"
                 placeholder="Search products ..."

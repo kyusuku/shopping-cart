@@ -117,7 +117,7 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
   }, []);
 
   return (
-    <div className="grid max-w-[75vw] grid-cols-4 gap-4">
+    <div className="grid max-w-[75vw] grid-cols-4 gap-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
       {productArr
         .filter(
           (product) =>
@@ -134,12 +134,16 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
             <img
               src={product.image}
               alt={product.title}
-              className="h-48 w-full object-contain"
+              className="h-48 w-full object-contain p-2"
             />
-            <h2 className="text-lg font-semibold">{product.title}</h2>
+            <h2 className="text-lg font-semibold max-2xl:text-center">
+              {product.title}
+            </h2>
             <div className="flex w-full flex-col items-center justify-center gap-6">
-              <div className="flex w-full items-center justify-between">
-                <div className="text-2xl font-bold">${product.price}</div>
+              <div className="flex w-full items-center justify-between max-2xl:grid max-2xl:grid-cols-1 max-2xl:gap-y-4">
+                <div className="text-2xl font-bold max-2xl:text-center">
+                  ${product.price}
+                </div>
                 <div className="flex items-center justify-center gap-2">
                   <div className="flex">
                     {stars.map((_, index) => (

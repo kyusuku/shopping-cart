@@ -7,7 +7,7 @@ const Exit = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(timer);
   });
 
@@ -22,9 +22,9 @@ const Exit = () => {
         <div className="flex min-h-screen items-center justify-center">
           <div className="animate-float flex max-w-[70ch] flex-col items-center gap-6">
             <h1 className="text-center text-5xl font-bold text-[#1E293E]">
-              You're All <span className="text-[#004687]">Set!</span>
+              You're all <span className="text-[#004687] italic">Set!</span>
             </h1>
-            <p className="text-center text-gray-600 italic">
+            <p className="text-center text-gray-600 italic max-md:max-w-[70vw]">
               Your order is being processed and will be shipped to you shortly.
             </p>
             <p className="text-center text-gray-600 italic">

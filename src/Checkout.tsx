@@ -93,19 +93,19 @@ const Checkout = () => {
       <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-16">
         <div className="animate-float mt-32 flex max-w-[70ch] flex-col items-center gap-6">
           <h1 className="text-center text-5xl font-bold text-[#1E293E]">
-            Almost <span className="text-[#004687]">There</span>
+            Almost <span className="text-[#004687] italic">There</span>
           </h1>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 italic">
             You've curated style with intention &mdash; now it's time to make it
             yours. Our streamlined checkout is designed for ease, speed, and
             total confidence
           </p>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 italic">
             Secure. Seamless. Effortless from cart to closet
           </p>
         </div>
-        <div className="card-shadow flex w-full max-w-[50vw] flex-col items-center justify-center bg-white p-4 px-8 pb-8">
-          <h2 className="text-2xl font-bold">
+        <div className="card-shadow flex w-full max-w-[50vw] flex-col items-center justify-center bg-white p-4 px-8 pb-8 max-xl:max-w-[90vw]">
+          <h2 className="text-2xl font-bold max-md:max-w-[20ch] max-md:text-center">
             REVIEW YOUR ORDER{" "}
             <span className="text-[#004687]">({cartItems.length} ITEMS)</span>
           </h2>
@@ -115,18 +115,18 @@ const Checkout = () => {
               Your cart is empty. Start shopping to fill it up!
             </p>
           ) : (
-            <div className="flex w-full max-w-[50vw] flex-col items-center justify-center gap-12">
+            <div className="flex w-full max-w-[50vw] flex-col items-center justify-center gap-12 max-xl:max-w-full">
               {cartItems.map((cartItem) => (
                 <div
                   key={cartItem.title}
-                  className="grid w-full grid-cols-4 gap-x-6 gap-y-4"
+                  className="grid w-full grid-cols-4 gap-x-6 gap-y-4 max-md:grid-cols-5"
                 >
                   <img
                     src={cartItem.image}
                     alt={cartItem.title}
-                    className="col-span-1 h-48 w-48 self-center justify-self-center rounded-md border-2 border-gray-300 object-contain p-2"
+                    className="col-span-1 h-48 w-48 self-center justify-self-center rounded-md border-2 border-gray-300 object-contain p-2 max-md:col-span-2 max-md:size-34"
                   />
-                  <div className="col-span-3 flex flex-col items-start justify-between">
+                  <div className="col-span-3 flex flex-col items-start justify-between max-md:col-span-3">
                     <div className="flex w-full items-center justify-between">
                       <h3 className="text-lg font-bold">{cartItem.title}</h3>
                       <button
@@ -151,13 +151,13 @@ const Checkout = () => {
                         </svg>
                       </button>
                     </div>
-                    <p className="text-pretty">
+                    <p className="text-pretty max-md:hidden">
                       {cartItem.description.charAt(0).toUpperCase() +
                         cartItem.description.slice(1)}
                     </p>
-                    <div className="flex w-full items-center justify-between gap-2">
-                      <div className="flex items-center justify-start gap-2">
-                        <p className="">Quantity: </p>
+                    <div className="flex w-full items-center justify-between gap-2 max-md:grid max-md:grid-rows-2">
+                      <div className="flex items-center justify-start gap-2 max-md:row-2 max-sm:col-span-3 max-sm:justify-start">
+                        <p className="max-sm:hidden">Quantity: </p>
                         <div className="flex items-center justify-center gap-2">
                           <div
                             onClick={() => handleClickDecrease(cartItem.title)}
@@ -216,7 +216,7 @@ const Checkout = () => {
               <Link to="/exit">
                 <button
                   type="button"
-                  className="mt-4 rounded-lg bg-[#004687] px-6 py-4 text-3xl font-bold text-white transition hover:-translate-y-2 hover:scale-105 hover:shadow-2xl"
+                  className="mt-4 rounded-lg bg-[#004687] px-6 py-4 text-3xl font-bold text-white transition hover:-translate-y-2 hover:scale-105 hover:shadow-2xl max-md:mt-6 max-md:text-2xl"
                 >
                   Check Out
                 </button>

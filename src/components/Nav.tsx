@@ -9,11 +9,14 @@ const Nav = () => {
   const totalItems = cartItems.length;
 
   return (
-    <div className="fixed top-0 z-2 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
-      <Link to="/" className="text-3xl font-bold text-[#004687]">
+    <div className="fixed top-0 z-2 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray] max-sm:justify-end max-sm:px-2">
+      <Link
+        to="/"
+        className="text-3xl font-bold text-[#004687] italic max-sm:hidden"
+      >
         Threadware
       </Link>
-      <div className="text-md absolute left-1/2 flex -translate-x-1/2 transform gap-8 font-semibold">
+      <div className="text-md absolute left-1/2 flex -translate-x-1/2 transform gap-8 font-semibold max-sm:gap-2">
         <Link
           to="/"
           className={`rounded-md px-4 py-2 transition hover:-translate-y-1 hover:bg-[#bdddfa] ${

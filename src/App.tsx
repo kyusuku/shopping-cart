@@ -7,17 +7,17 @@ const App = () => {
     <div className="relative">
       <Nav />
       <div className="flex min-h-screen flex-col items-center justify-center gap-12 p-8">
-        <div className="animate-float flex max-w-[80ch] flex-col items-center gap-6">
+        <div className="animate-float mt-24 flex max-w-[80ch] flex-col items-center gap-6">
           <h1 className="text-center text-5xl font-bold text-[#1E293E]">
-            Welcome to <span className="text-[#004687]">Threadware</span>
+            Welcome to <span className="text-[#004687] italic">Threadware</span>
           </h1>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 italic">
             Where style meets innovation. Threadware is your destination for
             cutting-edge fashion fused with smart design. From elevated
             streetwear to tech-infused essentials, we bring you apparel and
             accessories that don't just look good &mdash; they think forward
           </p>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 italic">
             Minimal. Modern. Made for life in motion
           </p>
         </div>
