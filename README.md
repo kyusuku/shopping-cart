@@ -38,13 +38,6 @@ shopping-cart/
 │       └── ItemCountContext.tsx
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or later)
-- npm or yarn
-
 ### Installation
 
 1. **Clone the repository:**
@@ -55,16 +48,12 @@ shopping-cart/
 2. **Install dependencies:**
    ```sh
    npm install
-   # or
-   yarn install
    ```
 3. **Run the development server:**
    ```sh
    npm run dev
-   # or
-   yarn dev
    ```
-   Open your browser at `http://localhost:3000` (or the port specified in the console) to view the application.
+   Open your browser at `http://localhost:5173` (or the port specified in the console) to view the application.
 
 ## Available Scripts
 
