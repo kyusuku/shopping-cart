@@ -4,8 +4,9 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useItemCount } from "../context/ItemCountContext";
 
 const Nav = () => {
-  const { itemCount } = useItemCount();
+  const { cartItems } = useItemCount();
   const location = useLocation();
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="fixed top-0 z-2 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">
@@ -39,7 +40,7 @@ const Nav = () => {
           <FontAwesomeIcon icon={faCartShopping} />
           <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#004687]">
             <p className="font-bold text-white">
-              {itemCount > 99 ? "99" : itemCount}
+              {totalItems > 99 ? "99" : totalItems}
             </p>
           </div>
         </div>

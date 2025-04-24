@@ -27,12 +27,29 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
   const [inputCounts, setInputCounts] = useState<{
     [key: number]: number | string;
   }>({});
-  const { setItemCount } = useItemCount();
+  const { setCartItems } = useItemCount();
+
   const stars = Array(5).fill(0);
 
   const handleAddToCart = (id: number) => {
     const count = Number(inputCounts[id] || 1);
-    setItemCount((prev) => prev + count);
+    const product = productArr.find((prod) => prod.id === id);
+    if (!product) return;
+    setCartItems((current) => {
+      const existing = current.find((item) => item.title === product.title);
+      if (existing) {
+        return current.map((item) =>
+          item.title === product.title
+            ? { ...item, quantity: item.quantity + count }
+            : item,
+        );
+      } else {
+        return [
+          ...current,
+          { title: product.title, price: product.price, quantity: count },
+        ];
+      }
+    });
   };
 
   const handleClickDecrease = (id: number) => {
@@ -74,15 +91,14 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
       const promises = [];
       for (let i = 1; i <= 20; i++) {
         promises.push(
-          fetch(`https://fakestoreapi.com/products/${i}`).then((response) => {
-            if (response.status >= 400) {
+          fetch(`https://fakestoreapi.com/products/${i}`).then((resp) => {
+            if (resp.status >= 400) {
               throw new Error("server error");
             }
-            return response.json();
+            return resp.json();
           }),
         );
       }
-
       try {
         const products = await Promise.all(promises);
         setProductArr(products);
@@ -120,17 +136,15 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
                 <div className="text-2xl font-bold">${product.price}</div>
                 <div className="flex items-center justify-center gap-2">
                   <div className="flex">
-                    {stars.map((_, index) => {
-                      return (
-                        <FaStar
-                          key={index}
-                          size={24}
-                          color={
-                            product.rating.rate > index ? "#F2C265" : "a9a9a9"
-                          }
-                        ></FaStar>
-                      );
-                    })}
+                    {stars.map((_, index) => (
+                      <FaStar
+                        key={index}
+                        size={24}
+                        color={
+                          product.rating.rate > index ? "#F2C265" : "a9a9a9"
+                        }
+                      />
+                    ))}
                   </div>
                   <div className="text-lg font-semibold">
                     {product.rating.rate}

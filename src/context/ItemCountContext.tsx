@@ -1,8 +1,14 @@
 import React, { createContext, useContext, useState } from "react";
 
+interface CartItem {
+  title: string;
+  price: number;
+  quantity: number;
+}
+
 interface ItemCountContextType {
-  itemCount: number;
-  setItemCount: React.Dispatch<React.SetStateAction<number>>;
+  cartItems: CartItem[];
+  setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
 const ItemCountContext = createContext<ItemCountContextType | undefined>(
@@ -12,10 +18,10 @@ const ItemCountContext = createContext<ItemCountContextType | undefined>(
 export const ItemCountProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [itemCount, setItemCount] = useState(0);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   return (
-    <ItemCountContext.Provider value={{ itemCount, setItemCount }}>
+    <ItemCountContext.Provider value={{ cartItems, setCartItems }}>
       {children}
     </ItemCountContext.Provider>
   );
