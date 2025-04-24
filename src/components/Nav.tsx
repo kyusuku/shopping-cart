@@ -12,7 +12,7 @@ const Nav = () => {
       <Link to="/" className="text-3xl font-bold text-[#004687]">
         Threadware
       </Link>
-      <div className="text-md flex gap-8 font-semibold">
+      <div className="text-md absolute left-1/2 flex -translate-x-1/2 transform gap-8 font-semibold">
         <Link
           to="/"
           className={`rounded-md px-4 py-2 transition hover:-translate-y-1 hover:bg-[#bdddfa] ${
