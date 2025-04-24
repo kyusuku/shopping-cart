@@ -6,7 +6,7 @@ import { useItemCount } from "../context/ItemCountContext";
 const Nav = () => {
   const { cartItems } = useItemCount();
   const location = useLocation();
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cartItems.length;
 
   return (
     <div className="fixed top-0 z-2 flex w-full items-center justify-between bg-white px-8 py-4 shadow-[0_2px_5px_-2px_gray]">

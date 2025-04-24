@@ -46,7 +46,13 @@ const Card = ({ searchQuery, selectedCategory }: propTypes) => {
       } else {
         return [
           ...current,
-          { title: product.title, price: product.price, quantity: count },
+          {
+            title: product.title,
+            price: product.price,
+            quantity: count,
+            image: product.image,
+            description: product.description,
+          },
         ];
       }
     });
