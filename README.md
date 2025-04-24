@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# Threadware
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Threadware is a React application built with TypeScript and Vite. It leverages Tailwind CSS for styling and provides a seamless shopping experience with features like a dynamic shopping cart, checkout flow, and contextual state management. Product data is fetched from the [FakeStore API](https://fakestoreapi.com/).
 
-Currently, two official plugins are available:
+## Try It Out
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live demo: [Here!](https://threadware.vercel.app)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Modern UI & Animations:** Clean and responsive design with smooth transitions.
+- **Dynamic Shopping Cart:** Add, update, and delete items with quantity adjustments.
+- **Checkout Flow:** Review your order and see a live subtotal calculation.
+- **Loading States:** Animated loading indicators for a polished UX.
+- **State Management:** Utilizes React Context for managing cart state.
+- **API Integration:** Fetches product data from the [FakeStore API](https://fakestoreapi.com/).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+## Project Structure
+
+```
+shopping-cart/
+├── src/
+│   ├── App.css
+│   ├── App.tsx
+│   ├── Checkout.tsx
+│   ├── Exit.tsx
+│   ├── Shop.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   ├── routes.tsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── Nav.tsx
+│   │   ├── Dropdown.tsx
+│   │   └── Card.tsx
+│   └── context/
+│       └── ItemCountContext.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+- Node.js (v16 or later)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/kyusuku/shopping-cart.git
+   cd shopping-cart
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+3. **Run the development server:**
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+   Open your browser at `http://localhost:3000` (or the port specified in the console) to view the application.
+
+## Available Scripts
+
+- **`dev`**: Starts the development server.
+- **`build`**: Builds the project for production.
+- **`preview`**: Serves the production build locally.
+- **`lint`**: Runs ESLint to analyze code quality.
+
+## Technologies Used
+
+- **React** with TypeScript
+- **Vite** for fast development and bundling
+- **Tailwind CSS** for utility-first styling
+- **React Router DOM** for client-side routing
+- **Context API** for state management
+- **FakeStore API:** Used to fetch product data
+
+## Configuration Files
+
+- **ESLint:** Configured in [eslint.config.js](./eslint.config.js) for code linting.
+- **Prettier:** Formatting is set up via [`.prettierrc`](./.prettierrc) and [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss).
+- **Vite:** The build configuration can be found in [vite.config.ts](./vite.config.ts).
+- **Vercel:** Deployment settings are specified in [vercel.json](./vercel.json).
+
+## Deployment
+
+This project is configured for deployment on Vercel. Rewrites to `index.html` are handled automatically via the settings in [vercel.json](./vercel.json).
+
+## Acknowledgments
+
+## Acknowledgments
+
+This project was developed using best practices for modern web development with the React + TypeScript + Vite template. Special thanks to The Odin Project for providing invaluable learning resources, inspiration, and guidance on this journey.
